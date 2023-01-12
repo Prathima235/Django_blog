@@ -1,0 +1,50 @@
+{% extends "App/templates/base.html" %}
+{% block content %}
+<style>
+  img {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  top: 20px;
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+}
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.h6 {
+  font-family: "Times New Roman", Times, serif;
+}
+</style>
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to My Blog ✍️ </h3>
+          <p class="text-dark">Django is Awesome ✨✨✨ </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-md-8 mt-3">
+      {% for post in post_list %}
+      <div class="card mb-3 border-success mb-3">
+          <div class="card-body">
+          <h6  class="card-title"><b>{{ post.title }}</b></h6>
+          <p class="card-text h6 text-lg-center">By : {{ post.author }} | {{ post.created_on}}</p>
+
+          <p class="card-text text-lg-center"> {{post.comment|slice:":200"}} | Status : {{ post.status }} </p>
+          <img class="img-thumbnail" src="{{ post.image.url }}" alt="{{post.slug}}" class="rounded-0">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%endblock%}
