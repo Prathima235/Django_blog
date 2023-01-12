@@ -21,6 +21,7 @@ python manage.py runserver
 
 ## Migrate Database
 python manage.py makemigrations
+
 python manage.py migrate
 
 ## Create Superuser to access Admin Panel
