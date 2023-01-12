@@ -14,6 +14,7 @@ pip install pillow
 
 ## Start Project & App
 django-admin startproject Project
+
 python manage.py startapp App
 
 ## Run App
