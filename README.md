@@ -3,6 +3,7 @@ A simple Django Blog
 
 ## Installations
 pip install django
+
 pip install pillow
 
 ## Steps to be follwed to run project
